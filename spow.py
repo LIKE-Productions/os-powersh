@@ -3,35 +3,56 @@ import shutil
 from PIL import Image
 
 
-file_path = os.getcwd()
-folder = Image.open("./Images/Folder Icon.tif");
-file = Image.open("./Images/File Icon.tif");
+fp = os.getcwd()
 
 class Spow:
-    
+    """
+    This is the Spow class. It is a version of the OS Module made  for PowerShell like commands that take way less time and sometimes look better
+    """
     
     def __init__(self):
-        pass
+        self.folder = "|@|"
+        self.file = "/_|"
 
+    def osn(self):
+        print(os.uname())
     def spwd(self):
-        print(file_path)
+        print(fp)
 
     def sdir(self):
-        for folder, sub_folders, files in os.walk(file_path):
-            print(f"Currently looking at {folder}")
-            print("\n")
+        print(os.listdir(fp))
 
-            for sub_fold in sub_folders:  
-                print(f"\t Subfolder: {sub_fold}")
+    def scopy(self,source,dest):
+        shutil.copy(source,dest)
+    def smove(self,source,dest):
+        shutil.move(source,dest)
+
+    def skl(self):
+        for folder, sub_folders, files in os.walk(fp):
+            print(f"Current directory: {folder}")
+            print("")
+            print("The folders are:")
+            for sub in sub_folders:
+                print(f"{self.folder} {sub}")
+            print("")
             print("The files are:")
             for f in files:
-                print(f"\t File: {f}")
-            print("\n")
-        print("End of directory.")
+                print(f"{self.file} {f}")
+            print("")
+        print("End of directory")
 
-    def scopy(self):
-         source = input("What is your source file or folder?\n")
 
-spow = Spow()
-spow.spwd()
-spow.sdir()
+    def sdelf(self,file):
+        os.unlink(file)
+    def sdeld(self,folder):
+        os.rmdir(folder)
+    def sdele(self,folder):
+        """
+        WARNING!!!! This is a very dangerous option and should not be considered!
+        """
+        shutil.rmtree(folder)
+
+    
+    
+if __name__ == "__main__":
+    spow = Spow()
