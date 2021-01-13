@@ -54,5 +54,4 @@ class Spow:
 
     
     
-if __name__ == "__main__":
-    spow = Spow()
+spow = Spow()
