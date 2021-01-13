@@ -1,4 +1,4 @@
-# os-powersh
+# spow
 This is a solution to a big problem I come up with when I use PowerShell which is quite simple.
 > I want to delete files, but I always have to add all these parameters, which can take up to 5 minutes sometimes.
 
